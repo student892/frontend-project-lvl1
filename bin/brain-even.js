@@ -1,5 +1,8 @@
 #!/usr/bin/env node
-import { checkEven} from '../src/check-even.js';
+import { sayHello } from '../src/cli.js';
+import checkEven from '../src/games/check-even.js';
+import startGame from '../src/index.js';
 
-console.log('Welcome to the Brain Games!');
-checkEven();
+sayHello();
+console.log('Answer "yes" if the number is even, otherwise answer "no".');
+startGame(checkEven);
