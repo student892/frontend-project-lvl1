@@ -1,7 +1,7 @@
 import { name } from './cli.js';
 
 const startGame = (gameFunction) => {
-  for(let i = 0; i <= 3; i = i + 1) {
+  for (let i = 0; i <= 3; i += 1) {
     if (i === 3) {
       console.log(`Congratulations, ${name}`);
       break;
@@ -11,9 +11,9 @@ const startGame = (gameFunction) => {
       console.log('Correct!');
     } else {
       console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}`);
-      console.log(`Let's try again, ${name}!`)
+      console.log(`Let's try again, ${name}!`);
       break;
     }
   }
-}
+};
 export default startGame;

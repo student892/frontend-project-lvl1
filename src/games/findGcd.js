@@ -8,7 +8,7 @@ const commonDivisor = (first, second) => {
     return min;
   }
   let greatestDivisor = 1;
-  for(let i = 2; i <= Math.floor(min / 2); i = i + 1) {
+  for (let i = 2; i <= Math.floor(min / 2); i += 1) {
     if (first % i === 0 && second % i === 0) {
       greatestDivisor = i;
     }
@@ -17,8 +17,8 @@ const commonDivisor = (first, second) => {
 };
 
 const findGsd = () => {
-  let firstNumber = getRandomNumber(1, 100);
-  let secondNumber = getRandomNumber(1, 100);
+  const firstNumber = getRandomNumber(1, 100);
+  const secondNumber = getRandomNumber(1, 100);
   console.log(`Question: ${firstNumber} ${secondNumber}`);
   const userAnswer = readlineSync.question('Your answer: ');
   const correctAnswer = String(commonDivisor(firstNumber, secondNumber));
