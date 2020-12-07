@@ -1,9 +1,8 @@
 ### Hexlet tests and linter status:
-![Actions Status](/workflows/hexlet-check/badge.svg)
+[![Hexlet Check](https://github.com/student892/frontend-project-lvl1/workflows/.github/workflows/hexlet-check.yml/badge.svg)](https://github.com/student892/frontend-project-lvl1/actions)
 ### Codeclimate
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 ### GitHub Actions
-<a href="https://github.com/student892/frontend-project-lvl1/actions"><img src='https://github.com/student892/frontend-project-lvl1/workflows/test.yml/badge.svg' alt='Testing'></a>
 [![Eslint Test](https://github.com/student892/frontend-project-lvl1/workflows/Testing%20widht%20ESlint/badge.svg)](https://github.com/student892/frontend-project-lvl1/actions)
 ### brain-even
 [![asciicast](https://asciinema.org/a/Z5CNvdGE3Z5BeS3jTfRfWkhrT.svg)](https://asciinema.org/a/Z5CNvdGE3Z5BeS3jTfRfWkhrT)```
