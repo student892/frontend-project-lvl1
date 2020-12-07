@@ -1,12 +1,17 @@
 import readlineSync from 'readline-sync';
 import getRandomNumber from '../getRandomNumber.js';
 
-const ariphmeticProgression = () => {
+const ariphmeticProgression = (predicate) => {
+  const gameMessage = 'What number is missing in the progression?';
+  if (predicate === true) {
+    console.log(gameMessage);
+  }
   const firstNumber = getRandomNumber(1, 15);
   const stepNumber = getRandomNumber(1, 8);
   const progressionArr = [firstNumber];
   let currentNumber = firstNumber;
-  for (let i = 0; i <= 8; i += 1) {
+  const progressionSize = 8;
+  for (let i = 0; i <= progressionSize; i += 1) {
     currentNumber += stepNumber;
     progressionArr.push(currentNumber);
   }

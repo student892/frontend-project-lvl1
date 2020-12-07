@@ -1,7 +1,11 @@
 import readlineSync from 'readline-sync';
 import getRandomNumber from '../getRandomNumber.js';
 
-const checkEven = () => {
+const checkEven = (predicate) => {
+  const gameMessage = 'Answer "yes" if the number is even, otherwise answer "no".';
+  if (predicate === true) {
+    console.log(gameMessage);
+  }
   const currentNumber = getRandomNumber(1, 100);
   console.log(`Question: ${currentNumber}`);
   const userAnswer = readlineSync.question('Your answer: ');

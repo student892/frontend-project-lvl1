@@ -9,7 +9,11 @@ const isPrimeNumber = (number) => {
   }
   return true;
 };
-const primeNumber = () => {
+const primeNumber = (predicate) => {
+  const gameMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  if (predicate === true) {
+    console.log(gameMessage);
+  }
   const currentNumber = getRandomNumber(1, 100);
   console.log(`Question: ${currentNumber}`);
   const userAnswer = readlineSync.question('Your answer: ');
