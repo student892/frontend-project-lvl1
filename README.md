@@ -5,6 +5,7 @@
 ### GitHub Actions
 <a href="https://github.com/student892/frontend-project-lvl1/actions"><img src='https://github.com/student892/frontend-project-lvl1/workflows/test.yml/badge.svg' alt='Testing'></a>
 ### Запуски кода
+[![asciicast](https://asciinema.org/a/Z5CNvdGE3Z5BeS3jTfRfWkhrT.svg)](https://asciinema.org/a/Z5CNvdGE3Z5BeS3jTfRfWkhrT)```
 <li><a href='https://asciinema.org/a/Z5CNvdGE3Z5BeS3jTfRfWkhrT'>brain-even</a></li>
 <li><a href='https://asciinema.org/a/jtysRaqq8btWxejJYvrlVA9Z3'>brain-cacl</a></li>
 <li><a href='https://asciinema.org/a/WG6ZtndWlblyBRCvj0j80d8MO'>brain-gcd</a></li>
