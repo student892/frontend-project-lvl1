@@ -1,6 +1,9 @@
 import readlineSync from 'readline-sync';
 import getRandomNumber from '../getRandomNumber.js';
 
+export const gameMessage = () => {
+  console.log('Find the greatest common divisor of given numbers.');
+};
 const findCommonDivisor = (first, second) => {
   const min = first < second ? first : second;
   const max = first > second ? first : second;
@@ -16,11 +19,7 @@ const findCommonDivisor = (first, second) => {
   return greatestDivisor;
 };
 
-const findGsd = (predicate) => {
-  const gameMessage = 'Find the greatest common divisor of given numbers.';
-  if (predicate === true) {
-    console.log(gameMessage);
-  }
+export const findGsd = () => {
   const firstNumber = getRandomNumber(1, 100);
   const secondNumber = getRandomNumber(1, 100);
   console.log(`Question: ${firstNumber} ${secondNumber}`);
@@ -28,4 +27,3 @@ const findGsd = (predicate) => {
   const correctAnswer = String(findCommonDivisor(firstNumber, secondNumber));
   return [userAnswer, correctAnswer];
 };
-export default findGsd;

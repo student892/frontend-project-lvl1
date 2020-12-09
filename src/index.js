@@ -1,20 +1,11 @@
 import { name, sayHello } from './cli.js';
 
-const startGame = (gameFunction) => {
+const startGame = (message, gameFunction) => {
   sayHello();
+  message();
   const roundCount = 3;
-  const welcomeRound = 0;
   for (let i = 0; i < roundCount; i += 1) {
-    let userAnswer;
-    let correctAnswer;
-    let predicate;
-    if (i === welcomeRound) {
-      predicate = true;
-      [userAnswer, correctAnswer] = gameFunction(predicate);
-    } else {
-      predicate = false;
-      [userAnswer, correctAnswer] = gameFunction(predicate);
-    }
+    const [userAnswer, correctAnswer] = gameFunction();
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {

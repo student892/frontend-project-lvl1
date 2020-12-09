@@ -1,11 +1,10 @@
 import readlineSync from 'readline-sync';
 import getRandomNumber from '../getRandomNumber.js';
 
-const ariphmeticProgression = (predicate) => {
-  const gameMessage = 'What number is missing in the progression?';
-  if (predicate === true) {
-    console.log(gameMessage);
-  }
+export const gameMessage = () => {
+  console.log('What number is missing in the progression?');
+};
+export const ariphmeticProgression = () => {
   const firstNumber = getRandomNumber(1, 15);
   const stepNumber = getRandomNumber(1, 8);
   const progressionArr = [firstNumber];
@@ -23,4 +22,3 @@ const ariphmeticProgression = (predicate) => {
   const userAnswer = readlineSync.question('Your answer: ');
   return [userAnswer, valueOfRandomPosition];
 };
-export default ariphmeticProgression;

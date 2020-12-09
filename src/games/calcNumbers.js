@@ -1,7 +1,10 @@
 import readlineSync from 'readline-sync';
 import getRandomNumber from '../getRandomNumber.js';
 
-const findExpression = (sign, firstNumber, secondNumber) => {
+export const gameMessage = () => {
+  console.log('What is the result of the expression?');
+};
+const solveExpression = (sign, firstNumber, secondNumber) => {
   switch (sign) {
     case '+':
       return firstNumber + secondNumber;
@@ -13,18 +16,13 @@ const findExpression = (sign, firstNumber, secondNumber) => {
       throw Error('Unknown Symbol');
   }
 };
-const calcNumbers = (predicate) => {
-  const gameMessage = 'What is the result of the expression?';
-  if (predicate === true) {
-    console.log(gameMessage);
-  }
+export const calcNumbers = () => {
   const firstNumber = getRandomNumber(1, 100);
   const secondNumber = getRandomNumber(1, 100);
   const mathSigns = ['+', '-', '*'];
   const currentSign = mathSigns[getRandomNumber(0, 3)];
   console.log(`Question: ${firstNumber} ${currentSign} ${secondNumber}`);
   const userAnswer = readlineSync.question('Your answer: ');
-  const correctAnswer = String(findExpression(currentSign, firstNumber, secondNumber));
+  const correctAnswer = String(solveExpression(currentSign, firstNumber, secondNumber));
   return [userAnswer, correctAnswer];
 };
-export default calcNumbers;
