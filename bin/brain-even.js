@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import gameObject from '../src/games/check-even.js';
+import checkEven from '../src/games/checkEven.js';
 import startGame from '../src/index.js';
 
-startGame(gameObject);
+startGame(checkEven);
