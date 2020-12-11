@@ -1,14 +1,6 @@
 import readlineSync from 'readline-sync';
 import getRandomNumber from '../getRandomNumber.js';
 
-export const gameObject = {
-  gameStartMessage: () => {
-    console.log('Find the greatest common divisor of given numbers.');
-  },
-  questionMessage: (...params) => {
-    console.log(`Question: ${params.join(' ')}`);
-  },
-};
 const findCommonDivisor = (first, second) => {
   const min = first < second ? first : second;
   const max = first > second ? first : second;
@@ -23,12 +15,20 @@ const findCommonDivisor = (first, second) => {
   }
   return greatestDivisor;
 };
-
-export const findGsd = () => {
-  const firstNumber = getRandomNumber(1, 100);
-  const secondNumber = getRandomNumber(1, 100);
-  gameObject.questionMessage(firstNumber, secondNumber);
-  const userAnswer = readlineSync.question('Your answer: ');
-  const correctAnswer = String(findCommonDivisor(firstNumber, secondNumber));
-  return [userAnswer, correctAnswer];
+const gameObject = {
+  gameStartMessage: function gameStartMessage() {
+    console.log('Find the greatest common divisor of given numbers.');
+  },
+  questionMessage: function questonMessage(...params) {
+    console.log(`Question: ${params.join(' ')}`);
+  },
+  gameFunction: function gameFunction() {
+    const firstNumber = getRandomNumber(1, 100);
+    const secondNumber = getRandomNumber(1, 100);
+    this.questionMessage(firstNumber, secondNumber);
+    const userAnswer = readlineSync.question('Your answer: ');
+    const correctAnswer = String(findCommonDivisor(firstNumber, secondNumber));
+    return [userAnswer, correctAnswer];
+  },
 };
+export default gameObject;

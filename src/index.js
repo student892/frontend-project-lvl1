@@ -1,11 +1,11 @@
 import { name, sayHello } from './cli.js';
 
-const startGame = (message, gameFunction) => {
+const startGame = (gameObj) => {
   sayHello();
-  message();
+  gameObj.gameStartMessage();
   const ROUND_COUNT = 3;
   for (let i = 0; i < ROUND_COUNT; i += 1) {
-    const [userAnswer, correctAnswer] = gameFunction();
+    const [userAnswer, correctAnswer] = gameObj.gameFunction();
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {
