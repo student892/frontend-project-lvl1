@@ -1,8 +1,13 @@
 import readlineSync from 'readline-sync';
 import getRandomNumber from '../getRandomNumber.js';
 
-export const gameMessage = () => {
-  console.log('What is the result of the expression?');
+export const gameObject = {
+  gameStartMessage: () => {
+    console.log('What is the result of the expression?');
+  },
+  questionMessage: (...params) => {
+    console.log(`Question: ${params.join(' ')}`);
+  },
 };
 const solveExpression = (sign, firstNumber, secondNumber) => {
   switch (sign) {
@@ -21,7 +26,7 @@ export const calcNumbers = () => {
   const secondNumber = getRandomNumber(1, 100);
   const mathSigns = ['+', '-', '*'];
   const currentSign = mathSigns[getRandomNumber(0, 3)];
-  console.log(`Question: ${firstNumber} ${currentSign} ${secondNumber}`);
+  gameObject.questionMessage(firstNumber, currentSign, secondNumber);
   const userAnswer = readlineSync.question('Your answer: ');
   const correctAnswer = String(solveExpression(currentSign, firstNumber, secondNumber));
   return [userAnswer, correctAnswer];
