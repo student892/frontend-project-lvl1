@@ -1,30 +1,26 @@
-import readlineSync from 'readline-sync';
 import getRandomNumber from '../getRandomNumber.js';
 
-const gameObject = {
-  gameStartMessage: function gameStartMessage() {
-    console.log('What number is missing in the progression?');
-  },
-  questionMessage: function questionMessage(...params) {
-    console.log(`Question: ${params.join(' ')}`);
-  },
-  gameFunction: function gameFunction() {
-    const firstNumber = getRandomNumber(1, 15);
-    const stepNumber = getRandomNumber(1, 8);
-    const progressionArr = [firstNumber];
-    let currentNumber = firstNumber;
-    const PROGRESSION_SIZE = 8;
-    for (let i = 0; i <= PROGRESSION_SIZE; i += 1) {
-      currentNumber += stepNumber;
-      progressionArr.push(currentNumber);
-    }
-    const randomPositionInArray = getRandomNumber(0, 10);
-    const valueOfRandomPosition = String(progressionArr[randomPositionInArray]);
-    progressionArr[randomPositionInArray] = '..';
-    const progressionString = progressionArr.join(' ');
-    this.questionMessage(progressionString);
-    const userAnswer = readlineSync.question('Your answer: ');
-    return [userAnswer, valueOfRandomPosition];
-  },
+const makeAriphmeticProgression = (firstNumber, progressionStep, progressionSize) => {
+  const progression = [firstNumber];
+  let currentNumber = firstNumber;
+  for (let i = 1; i < progressionSize; i += 1) {
+    currentNumber += progressionStep;
+    progression.push(currentNumber);
+  }
+  return progression;
 };
-export default gameObject;
+const gameFunction = () => {
+  const gameStartMessage = 'What number is missing in the progression?';
+  const firstNumber = getRandomNumber(1, 15);
+  const stepNumber = getRandomNumber(1, 8);
+  const PROGRESSION_SIZE = 10;
+  const progression = makeAriphmeticProgression(firstNumber, stepNumber, PROGRESSION_SIZE);
+  const randomPositionInArray = getRandomNumber(0, PROGRESSION_SIZE);
+  const valueOfRandomPosition = String(progression[randomPositionInArray]);
+  const correctAnswer = valueOfRandomPosition;
+  progression[randomPositionInArray] = '..';
+  const progressionString = progression.join(' ');
+  const question = `${progressionString}`;
+  return { gameStartMessage, question, correctAnswer };
+};
+export default gameFunction;
