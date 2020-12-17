@@ -1,4 +1,5 @@
 import getRandomNumber from '../getRandomNumber.js';
+import startGame from '../index.js';
 
 const solveExpression = (sign, firstNumber, secondNumber) => {
   switch (sign) {
@@ -12,15 +13,15 @@ const solveExpression = (sign, firstNumber, secondNumber) => {
       throw Error('Unknown Symbol');
   }
 };
+const gameStartMessage = 'What is the result of the expression?';
 const mathSigns = ['+', '-', '*'];
 const mathSignsLength = mathSigns.length;
 const gameFunction = () => {
-  const gameStartMessage = 'What is the result of the expression?';
   const firstNumber = getRandomNumber(1, 100);
   const secondNumber = getRandomNumber(1, 100);
   const currentSign = mathSigns[getRandomNumber(0, mathSignsLength)];
   const question = `${firstNumber} ${currentSign} ${secondNumber}`;
   const correctAnswer = String(solveExpression(currentSign, firstNumber, secondNumber));
-  return { gameStartMessage, question, correctAnswer };
+  return { question, correctAnswer };
 };
-export default gameFunction;
+export default () => startGame(gameStartMessage, gameFunction);

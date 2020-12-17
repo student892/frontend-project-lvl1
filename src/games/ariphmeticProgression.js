@@ -1,4 +1,5 @@
 import getRandomNumber from '../getRandomNumber.js';
+import startGame from '../index.js';
 
 const makeAriphmeticProgression = (firstNumber, progressionStep, progressionSize) => {
   const progression = [firstNumber];
@@ -9,8 +10,8 @@ const makeAriphmeticProgression = (firstNumber, progressionStep, progressionSize
   }
   return progression;
 };
+const gameStartMessage = 'What number is missing in the progression?';
 const gameFunction = () => {
-  const gameStartMessage = 'What number is missing in the progression?';
   const firstNumber = getRandomNumber(1, 15);
   const stepNumber = getRandomNumber(1, 8);
   const PROGRESSION_SIZE = 10;
@@ -21,6 +22,6 @@ const gameFunction = () => {
   progression[randomPositionInArray] = '..';
   const progressionString = progression.join(' ');
   const question = `${progressionString}`;
-  return { gameStartMessage, question, correctAnswer };
+  return { question, correctAnswer };
 };
-export default gameFunction;
+export default () => startGame(gameStartMessage, gameFunction);
