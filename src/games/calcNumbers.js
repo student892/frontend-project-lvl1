@@ -1,5 +1,4 @@
 import getRandomNumber from '../getRandomNumber.js';
-import startGame from '../index.js';
 
 const solveExpression = (sign, firstNumber, secondNumber) => {
   switch (sign) {
@@ -24,4 +23,7 @@ const gameFunction = () => {
   const correctAnswer = String(solveExpression(currentSign, firstNumber, secondNumber));
   return { question, correctAnswer };
 };
-export default () => startGame(gameStartMessage, gameFunction);
+export default () => ({
+  gameStartMessage,
+  gameFunction,
+});

@@ -1,5 +1,4 @@
 import getRandomNumber from '../getRandomNumber.js';
-import startGame from '../index.js';
 
 const isEven = (number) => {
   const answer = number % 2 === 0;
@@ -12,4 +11,7 @@ const gameFunction = () => {
   const correctAnswer = isEven(currentNumber) ? 'yes' : 'no';
   return { question, correctAnswer };
 };
-export default () => startGame(gameStartMessage, gameFunction);
+export default () => ({
+  gameStartMessage,
+  gameFunction,
+});

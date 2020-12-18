@@ -1,12 +1,13 @@
 import readlineSync from 'readline-sync';
 import sayHello from './cli.js';
 
-const startGame = (message, game) => {
+const startGame = (gameFn) => {
   const name = sayHello();
-  console.log(message);
+  const game = gameFn();
+  console.log(game.gameStartMessage);
   const ROUND_COUNT = 3;
   for (let i = 0; i < ROUND_COUNT; i += 1) {
-    const { question, correctAnswer } = game();
+    const { question, correctAnswer } = game.gameFunction();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer) {

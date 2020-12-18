@@ -1,5 +1,4 @@
 import getRandomNumber from '../getRandomNumber.js';
-import startGame from '../index.js';
 
 const findCommonDivisor = (first, second) => {
   const min = Math.min(first, second);
@@ -23,4 +22,7 @@ const gameFunction = () => {
   const correctAnswer = String(findCommonDivisor(firstNumber, secondNumber));
   return { gameStartMessage, question, correctAnswer };
 };
-export default () => startGame(gameStartMessage, gameFunction);
+export default () => ({
+  gameStartMessage,
+  gameFunction,
+});

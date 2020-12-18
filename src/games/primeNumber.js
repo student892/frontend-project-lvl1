@@ -1,5 +1,4 @@
 import getRandomNumber from '../getRandomNumber.js';
-import startGame from '../index.js';
 
 const isPrimeNumber = (number) => {
   if (number === 1) {
@@ -19,4 +18,7 @@ const gameFunction = () => {
   const correctAnswer = isPrimeNumber(currentNumber) ? 'yes' : 'no';
   return { question, correctAnswer };
 };
-export default () => startGame(gameStartMessage, gameFunction);
+export default () => ({
+  gameStartMessage,
+  gameFunction,
+});

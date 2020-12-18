@@ -1,5 +1,4 @@
 import getRandomNumber from '../getRandomNumber.js';
-import startGame from '../index.js';
 
 const makeAriphmeticProgression = (firstNumber, progressionStep, progressionSize) => {
   const progression = [firstNumber];
@@ -24,4 +23,7 @@ const gameFunction = () => {
   const question = `${progressionString}`;
   return { question, correctAnswer };
 };
-export default () => startGame(gameStartMessage, gameFunction);
+export default () => ({
+  gameStartMessage,
+  gameFunction,
+});
