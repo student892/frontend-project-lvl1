@@ -20,7 +20,7 @@ const gameFunction = () => {
   const secondNumber = getRandomNumber(1, 100);
   const question = `${firstNumber}, ${secondNumber}`;
   const correctAnswer = String(findCommonDivisor(firstNumber, secondNumber));
-  return { gameStartMessage, question, correctAnswer };
+  return { question, correctAnswer };
 };
 export default () => ({
   gameStartMessage,

@@ -1,15 +1,21 @@
 import readlineSync from 'readline-sync';
-import sayHello from './cli.js';
 
 const startGame = (gameFn) => {
-  const name = sayHello();
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+
   const game = gameFn();
   console.log(game.gameStartMessage);
+
   const ROUND_COUNT = 3;
+
   for (let i = 0; i < ROUND_COUNT; i += 1) {
     const { question, correctAnswer } = game.gameFunction();
     console.log(`Question: ${question}`);
+
     const userAnswer = readlineSync.question('Your answer: ');
+
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {
@@ -18,6 +24,8 @@ const startGame = (gameFn) => {
       return;
     }
   }
+
   console.log(`Congratulations, ${name}`);
 };
+
 export default startGame;
