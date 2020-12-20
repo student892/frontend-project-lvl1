@@ -2,9 +2,8 @@ name: hexlet-check
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - '**'
 
 jobs:
   build:
