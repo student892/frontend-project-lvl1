@@ -25,7 +25,7 @@ const startGame = (gameFn) => {
     }
   }
 
-  console.log(`Congratulations, ${name}`);
+  console.log(`Congratulations, ${name}!`);
 };
 
 export default startGame;
